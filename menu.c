@@ -6,7 +6,7 @@ struct node
     struct node *n;
 };
 struct node *head, *tail;
-
+int length = 0;
 void display()
 {
     struct node *c;
@@ -41,6 +41,7 @@ void insertbegin(int i)
         n->n = head;
         head = n;
     }
+    length++;
 }
 void insertatend(int i)
 {
@@ -57,6 +58,7 @@ void insertatend(int i)
         tail->n = n;
         tail = n;
     }
+    length++;
 }
 void insert(int i, int s)
 {
@@ -70,6 +72,10 @@ void insert(int i, int s)
         {
             insertbegin(i);
         }
+        else if (s == length-1)
+        {
+            insertatend(i);
+        }
         else
         {
             for (int i = 1; i < s; i++)
@@ -79,12 +85,14 @@ void insert(int i, int s)
             struct node *a = c->n;
             c->n = n;
             n->n = a;
+            length++;
         }
     }
     else
     {
         head = n;
         tail = n;
+        length++;
     }
 }
 void deleteatbegin()
@@ -92,6 +100,7 @@ void deleteatbegin()
     struct node *c = head;
     head = head->n;
     free(c);
+    length--;
 }
 void deleteatend()
 {
@@ -105,17 +114,35 @@ void deleteatend()
     struct node *a = c->n;
     free(a);
     c->n = NULL;
+    length--;
 }
 void delete(int a)
 {
     struct node *c = head;
-    while (c->n->d != a)
+    if (head != NULL)
     {
-        c = c->n;
+        if (c->n != NULL)
+        {
+            while (c->n->d != a)
+            {
+                c = c->n;
+            }
+            struct node *b = c->n;
+            c->n = b->n;
+            free(b);
+            length--;
+        }
+        else
+        {
+            head = head->n;
+            free(c);
+            length--;
+        }
     }
-    struct node *b = c->n;
-    c->n = b->n;
-    free(b);
+    else
+    {
+        printf("List is already empty\n");
+    }
 }
 void search(int i)
 {
@@ -147,20 +174,10 @@ void search(int i)
         printf("List is Empty\n");
     }
 }
-void length()
+void lengthp()
 {
-    struct node *c = head;
-    int l = 0;
-    while (c != NULL)
-    {
-        l++;
-        c = c->n;
-    }
-    printf("Length of the List is %d\n", l);
-}
 
-void check(int c)
-{
+    printf("Length of the List is %d\n", length);
 }
 void input(int *c)
 {
@@ -202,7 +219,6 @@ int main()
         int a;
         printf("Enter the Position:");
         scanf("%d", &a);
-
         insert(i, a);
         break;
     }
@@ -226,7 +242,7 @@ int main()
     }
     case 7:
     {
-        length();
+        lengthp();
         break;
     }
     case 8:
