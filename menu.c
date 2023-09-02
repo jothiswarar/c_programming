@@ -6,7 +6,7 @@ struct node
     struct node *n;
 };
 struct node *head, *tail;
-int length = 0;
+
 void display()
 {
     struct node *c;
@@ -41,7 +41,7 @@ void insertbegin(int i)
         n->n = head;
         head = n;
     }
-    length++;
+    // length++;
 }
 void insertatend(int i)
 {
@@ -58,7 +58,7 @@ void insertatend(int i)
         tail->n = n;
         tail = n;
     }
-    length++;
+    // length++;
 }
 void insert(int i, int s)
 {
@@ -68,31 +68,21 @@ void insert(int i, int s)
     n->n = NULL;
     if (head != NULL)
     {
-        if (s == 1)
+
+        for (int i = 1; i < s; i++)
         {
-            insertbegin(i);
+            c = c->n;
         }
-        else if (s == length-1)
-        {
-            insertatend(i);
-        }
-        else
-        {
-            for (int i = 1; i < s; i++)
-            {
-                c = c->n;
-            }
-            struct node *a = c->n;
-            c->n = n;
-            n->n = a;
-            length++;
-        }
+        struct node *a = c->n;
+        c->n = n;
+        n->n = a;
+        // length++;
     }
     else
     {
         head = n;
         tail = n;
-        length++;
+        // length++;
     }
 }
 void deleteatbegin()
@@ -100,7 +90,7 @@ void deleteatbegin()
     struct node *c = head;
     head = head->n;
     free(c);
-    length--;
+    //length--;
 }
 void deleteatend()
 {
@@ -114,7 +104,7 @@ void deleteatend()
     struct node *a = c->n;
     free(a);
     c->n = NULL;
-    length--;
+    // length--;
 }
 void delete(int a)
 {
@@ -130,13 +120,13 @@ void delete(int a)
             struct node *b = c->n;
             c->n = b->n;
             free(b);
-            length--;
+            //length--;
         }
         else
         {
             head = head->n;
             free(c);
-            length--;
+            // length--;
         }
     }
     else
@@ -144,12 +134,15 @@ void delete(int a)
         printf("List is already empty\n");
     }
 }
-void search(int i)
+void search()
 {
     struct node *c = head;
     int count;
+    int i;
     if (head != NULL)
     {
+        printf("Enter the Element to be Searched:");
+        scanf("%d", &i);
         count = 1;
         while (c->d != i)
         {
@@ -177,7 +170,21 @@ void search(int i)
 void lengthp()
 {
 
-    printf("Length of the List is %d\n", length);
+    struct node *c = head;
+    int l = 0;
+    while (c != NULL)
+    {
+        c = c->n;
+        l++;
+    }
+    if (l != 0)
+    {
+        printf("length of the list is %d\n", l);
+    }
+    else
+    {
+        printf("List  is empty\n");
+    }
 }
 void input(int *c)
 {
@@ -193,6 +200,7 @@ void input(int *c)
 int main()
 {
     int c;
+   
     input(&c);
     int i;
     switch (c)
@@ -247,9 +255,8 @@ int main()
     }
     case 8:
     {
-        printf("Enter the Element to be Searched:");
-        scanf("%d", &i);
-        search(i);
+        
+        search();
         break;
     }
     case 9:
@@ -261,17 +268,21 @@ int main()
     {
         printf("Enter a valid input.\n");
         main();
+        
         return 0;
     }
     }
-    printf("To continue enter 1 and To exit enter 0");
+    printf("To continue enter 1 and To exit enter 0\n");
     scanf("%d", &c);
-    if (c != 0)
+    if (c == 0)
     {
-        main();
+        
+        
+        return 0;
     }
     else
     {
+        main();
         return 0;
     }
 }
