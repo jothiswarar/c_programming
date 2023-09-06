@@ -24,7 +24,8 @@ void delete(int a)
     struct node *c = head;
     if (head != NULL)
     {
-        if (c->n != NULL)
+        
+        if (c->n != NULL&&head->d!=a)
         {
             while (c->n->d != a)
             {
@@ -35,7 +36,7 @@ void delete(int a)
             free(b);
             
         }
-        else
+        else 
         {
             head = head->n;
             free(c);
