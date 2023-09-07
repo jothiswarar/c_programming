@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Test",
+      "request": "launch",
+      "mainClass": "Test",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
+      "name": "Test",
+      "request": "launch",
+      "mainClass": "oopsjava.Test",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
       "name": "denomination",
       "request": "launch",
       "mainClass": "denomination",
