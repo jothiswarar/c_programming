@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "perfect",
+      "request": "launch",
+      "mainClass": "perfect",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
+      "name": "matrix",
+      "request": "launch",
+      "mainClass": "matrix",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
       "name": "Test",
       "request": "launch",
       "mainClass": "Test",
@@ -29,8 +43,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/python/c programming/c_programming",
-      "program": "d:/python/c programming/c_programming/build/Debug/outDebug",
+      "cwd": "d:/python/c programming/c_programming/double linked list",
+      "program": "d:/python/c programming/c_programming/double linked list/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
