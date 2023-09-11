@@ -44,7 +44,7 @@ void insertatend(int i)
         tail = n;
     }
 }
-void display(int i)
+void display()
 {
     node *c;
 
@@ -54,6 +54,9 @@ void display(int i)
     }
     else
     {
+        printf("Enter 1 for printing from start to end and -1 for end to start\n");
+        int i;
+        scanf("%d", &i);
         if (i > 0)
         {
             c = head;
@@ -91,7 +94,13 @@ void insert(int a, int s)
         {
             c = c->n;
         }
-        if (c == NULL)
+        if (c == tail)
+        {
+            tail->n = n;
+            n->p = tail;
+            tail = n;
+        }
+        else if (c == NULL)
         {
             printf("The element is not present in the list");
         }
@@ -136,7 +145,8 @@ void delete(int a)
             while (c->data != a)
             {
                 c = c->n;
-                if(c!=tail){
+                if (c != tail)
+                {
                     continue;
                 }
                 break;
@@ -242,91 +252,87 @@ void input(int *c)
 int main()
 {
 
-     int c;
-   
-    input(&c);
-    int i;
-    switch (c)
+    while (1)
     {
-    case 1:
-    {
-
-        printf("Enter the Element:");
-        scanf("%d", &i);
-        insertatbegin(i);
-        break;
-    }
-    case 2:
-    {
-        printf("Enter the Element:");
-        scanf("%d", &i);
-        insertatend(i);
-        break;
-    }
-    case 3:
-    {
-        printf("Enter the Element:");
-        scanf("%d", &i);
-        int a;
-        printf("Enter the Position:");
-        scanf("%d", &a);
-        insert(i, a);
-        break;
-    }
-    case 4:
-    {
-
-        deleteatbegin();
-        break;
-    }
-    case 5:
-    {
-        deleteatend();
-        break;
-    }
-    case 6:
-    {
-        printf("Enter the Element to be Deleted:");
-        scanf("%d", &i);
-        delete (i);
-        break;
-    }
-    case 7:
-    {
-        lengthp();
-        break;
-    }
-    case 8:
-    {
-        
-        search();
-        break;
-    }
-    case 9:
-    {
-        printf("Enter 1 for printing from start to end and -1 for end to start\n");
         int c;
-        scanf("%d",&c);
-        display(c);
-        break;
-    }
-    default:
-    {
-        printf("Enter a valid input.\n");
-        main();
-        
-        return 0;
-    }
-    }
-    printf("To continue enter 1 and To exit enter 0\n");
-    scanf("%d", &c);
-    if (c == 0)
-    {
-        return 0;
-    }
-    else
-    {
-        main();
-        return 0;
+        input(&c);
+        int i;
+        switch (c)
+        {
+        case 1:
+        {
+            printf("Enter the Element:");
+            scanf("%d", &i);
+            insertatbegin(i);
+            break;
+        }
+        case 2:
+        {
+            printf("Enter the Element:");
+            scanf("%d", &i);
+            insertatend(i);
+            break;
+        }
+        case 3:
+        {
+            printf("Enter the Element:");
+            scanf("%d", &i);
+            int a;
+            printf("Enter the Position:");
+            scanf("%d", &a);
+            insert(i, a);
+            break;
+        }
+        case 4:
+        {
+
+            deleteatbegin();
+            break;
+        }
+        case 5:
+        {
+            deleteatend();
+            break;
+        }
+        case 6:
+        {
+            printf("Enter the Element to be Deleted:");
+            scanf("%d", &i);
+            delete (i);
+            break;
+        }
+        case 7:
+        {
+            lengthp();
+            break;
+        }
+        case 8:
+        {
+
+            search();
+            break;
+        }
+        case 9:
+        {
+
+            display();
+            break;
+        }
+        default:
+        {
+            printf("Enter a valid input.\n");
+            continue;
+        }
+        }
+        printf("To continue enter 1 and To exit enter 0\n");
+        scanf("%d", &c);
+        if (c == 0)
+        {
+            break;
+        }
+        else
+        {
+            continue;
+        }
     }
 }
