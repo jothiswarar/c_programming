@@ -121,18 +121,31 @@ void insert(int a, int s)
 }
 void deleteatbegin()
 {
-    struct node *c = head;
-    head = head->n;
-    head->p = NULL;
-    free(c);
+    if(head != NULL)
+    {
+        struct node *c = head;
+        head = head->n;
+        head->p = NULL;
+        free(c);
+    }
+    else
+    {
+        printf("List is already empty\n");
+    }
 }
 void deleteatend()
 {
-
-    struct node *a = tail;
-    tail = tail->p;
-    free(a);
-    tail->n = NULL;
+    if (head != NULL)
+    {
+        struct node *a = tail;
+        tail = tail->p;
+        free(a);
+        tail->n = NULL;
+    }
+    else
+    {
+        printf("List is already empty\n");
+    }
 }
 void delete(int a)
 {
@@ -285,7 +298,6 @@ int main()
         }
         case 4:
         {
-
             deleteatbegin();
             break;
         }
