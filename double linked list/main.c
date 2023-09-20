@@ -90,19 +90,28 @@ void insert(int a, int s)
     if (head != NULL)
     {
 
-        for (int i = 1; i < s && c != NULL; i++)
+        for (int i = 0; i < s && c != NULL; i++)
         {
             c = c->n;
         }
-        if (c == tail)
+        if (c==head)
+        {
+            c->n = head;
+            head->p = c;
+            head = c;
+        }
+        else if (c == tail)
+        {
+            tail->p->n=n;
+            n->p=tail->p;
+            n->n=tail;
+            tail->p=n;
+        }
+        else if (c == NULL)
         {
             tail->n = n;
             n->p = tail;
             tail = n;
-        }
-        else if (c == NULL)
-        {
-            printf("The element is not present in the list");
         }
         else
         {
