@@ -150,23 +150,24 @@ void deleteatend()
 void delete()
 {
     int a;
-    printf("Enter the Position of the element to be deleted:");
-    scanf("%d", &a);
+
     struct node *c = head;
     if (head != NULL)
     {
-
+        printf("Enter the Position of the element to be deleted:");
+        scanf("%d", &a);
         if (a > 0)
         {
             for (int i = 0; i < a; i++)
             {
                 c = c->n;
+                if (c == NULL)
+                {
+                    printf("Length out of context\n");
+                    return;
+                }
             }
-            if (c == NULL)
-            {
-                printf("ERROR");
-            }
-            else if (c == tail)
+            if (c == tail)
             {
                 tail = tail->p;
                 tail->n = NULL;
@@ -302,7 +303,7 @@ int main()
         }
         case 6:
         {
-            delete();
+            delete ();
             break;
         }
         case 7:
