@@ -1,15 +1,8 @@
-
-
-public class Test {
-    Test(int a,int b){
-        System.out.println("a = "+a+" b = "+b);
-    }
-    Test(int a,float b){ 
-        System.out.println("a = "+a+" b = "+b);
-    }
-    public static void main(String[] args){
-        byte a=10;
-        byte b=15;
-        Test test=new Test(a,b);
-    }
-}
+class Test   
+{  
+    public static void main (String args[])   
+    {  
+        System.out.println(10 + 20 + "PSGCSE");   
+        System.out.println("PSGCSE" + 10 + 20);  
+    }  
+} 

@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "sorting",
+      "request": "launch",
+      "mainClass": "sorting",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
       "name": "perfect",
       "request": "launch",
       "mainClass": "perfect",

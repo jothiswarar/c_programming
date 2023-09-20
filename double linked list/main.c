@@ -121,7 +121,7 @@ void insert(int a, int s)
 }
 void deleteatbegin()
 {
-    if(head != NULL)
+    if (head != NULL)
     {
         struct node *c = head;
         head = head->n;
@@ -147,50 +147,44 @@ void deleteatend()
         printf("List is already empty\n");
     }
 }
-void delete(int a)
+void delete()
 {
+    int a;
+    printf("Enter the Position of the element to be deleted:");
+    scanf("%d", &a);
     struct node *c = head;
     if (head != NULL)
     {
 
-        if (head->data != a && tail->data != a)
+        if (a > 0)
         {
-            while (c->data != a)
+            for (int i = 0; i < a; i++)
             {
                 c = c->n;
-                if (c != tail)
-                {
-                    continue;
-                }
-                break;
             }
-            if (c == tail)
+            if (c == NULL)
             {
-                printf("The element is not present in the list\n");
+                printf("ERROR");
+            }
+            else if (c == tail)
+            {
+                tail = tail->p;
+                tail->n = NULL;
+                free(c);
             }
             else
             {
-                c->p->n = c->n;
-                c->n->p = c->p;
+                struct node *b = c->n;
+                c->p->n = b;
+                b->p = c->p;
                 free(c);
             }
         }
-        else if (tail->data == a)
-        {
-            c = tail;
-            tail = tail->p;
-            tail->n = NULL;
-            free(c);
-        }
-        else if (head->data == a)
+        else
         {
             head = head->n;
             head->p = NULL;
             free(c);
-        }
-        else
-        {
-            printf("The element is not present in the list");
         }
     }
     else
@@ -308,9 +302,7 @@ int main()
         }
         case 6:
         {
-            printf("Enter the Element to be Deleted:");
-            scanf("%d", &i);
-            delete (i);
+            delete();
             break;
         }
         case 7:
@@ -320,13 +312,11 @@ int main()
         }
         case 8:
         {
-
             search();
             break;
         }
         case 9:
         {
-
             display();
             break;
         }
