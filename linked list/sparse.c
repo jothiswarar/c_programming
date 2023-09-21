@@ -24,20 +24,25 @@ void add(int i,int j,int k){
 }
 void main(){
     int m,n;
-    printf("Enter row and columns:");
-    scanf("%d%d",&m,&n);
-    int a[m][n];
+    printf("Enter no. of Costumers:");
+    scanf("%d",&m);
+    printf("Enter no. of items:");
+    scanf("%d",&n);
+    int a;
+    //int a[m][n];
     for(int i=0;i<m;i++){
+        printf("Costumer No.%d\n",i+1);
         for(int j=0;j<n;j++){
-            scanf("%d",&a[i][j]);
-            if(a[i][j]==0){
+            printf("Item:%d Enter Quantity:",j+1);
+            scanf("%d",&a);
+            if(a==0){
                 continue;
             }
-            add(i,j,a[i][j]);
+            add(i,j,a);
         }
     }
     while(h!=NULL){
-        printf("Value at %d:%d=%d\n",h->row,h->col,h->val);
+        printf("%d:%d=%d\n",h->row+1,h->col+1,h->val);
         h=h->n;
     }
 }
