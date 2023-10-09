@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "library",
+      "request": "launch",
+      "mainClass": "library",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
+      "name": "abstractc",
+      "request": "launch",
+      "mainClass": "abstractc",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
       "name": "sorting",
       "request": "launch",
       "mainClass": "sorting",
