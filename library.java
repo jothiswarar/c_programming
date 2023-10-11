@@ -16,48 +16,54 @@ abstract class Library_Management{
     
     void Search(String b){
         for(int j=0;j<i;j++){
-            if(a[j]==b){
+            if(a[j].equals(b)){
                 System.out.println(b+" is found at "+(j+1)+" position");
             }
         }
     }
 }
+
 class Issue extends Library_Management{
-    void getbookname(){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter book to be Issued:");
-        Decrement(sc.nextLine());
-        System.out.println("Book is issued");
-    }
     void Decrement(String b){
         for(int j=0;j<i;j++){
-            if(a[j]==b){
+            if(a[j].equals(b)){
                 
                 for(int k=j+1;k<i;k++){
                     a[j]=a[k];
                     j++;
                 }
+                a[j]=null;
                 i--;
-                break;
+                return;
             }
         }
+        System.out.println("Book not found");
         
         
     }
-}
-class Return extends Library_Management{
     void getbookname(){
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter book to be Returned:");
-        Increment(sc.nextLine());
-        System.out.println("Book is Returned");
+        System.out.println("Enter book to be Issued:");
+        String b=sc.nextLine();
+        Decrement(b);
+        System.out.println("Book is issued");
     }
+    
+}
+class Return extends Library_Management{
     void Increment(String b){
         a[i]=b;
         
         i++;
 
     }
+    void getbookname(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter book to be Returned:");
+        Increment(sc.nextLine());
+        System.out.println("Book is Returned");
+    }
+    
 }
 public class library {
     public static void main(String [] args){
@@ -66,10 +72,14 @@ public class library {
         i.add("book 1");
         i.add("book 2");
         r.add("book 3");
+        i.add("book 4");
+        i.add("book 5");
+        r.add("book 6");
         i.displaybook();
         i.getbookname();
         i.displaybook();
         i.getbookname();
+        r.displaybook();
         r.getbookname();
         r.displaybook();
         i.Search("book 2");
