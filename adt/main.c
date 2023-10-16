@@ -1,29 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-int stack[100];
-int i=-1;
-void push(int a){
-    if(i==99){
-        printf("Stack is full");
-    }
-    else{
-        i++;
-        stack[i]=a;
-    }
-}
-int pop(){
-    if(i==-1){
-        printf("\nStack is Empty");
-        return -1;
-    }
-    else{
-        int c=stack[i];
-        i--;
-        return c;
-    }
-}
-int main(){
-    int n;
+#include "stack.c"
+//#include "stackarr.c"
+void main(){
+         int n;
     do{
         printf("Enter choice\n1.push\n2.pop\n3.exit\n");
         scanf("%d",&n);
@@ -39,7 +17,9 @@ int main(){
             }
             case 2:
                 {
-                    printf("%d\n",pop());
+                    int i=pop();
+                    if(i!=-1)
+                        printf("Recent elment:%d\n",i);
                     break;
                 }
 
