@@ -18,8 +18,12 @@ abstract class Library_Management{
         for(int j=0;j<i;j++){
             if(a[j].equals(b)){
                 System.out.println(b+" is found at "+(j+1)+" position");
+                return;
             }
         }
+        
+            System.out.println(b+" is not found. ");
+        
     }
 }
 
@@ -73,8 +77,6 @@ public class library {
         i.add("book 2");
         r.add("book 3");
         i.add("book 4");
-        i.add("book 5");
-        r.add("book 6");
         i.displaybook();
         i.getbookname();
         i.displaybook();
