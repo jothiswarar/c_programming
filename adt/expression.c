@@ -1,4 +1,4 @@
-#include "stackarr.c"
+#include "stack.c"
 #include <string.h>
 #include <ctype.h>
 int main()
