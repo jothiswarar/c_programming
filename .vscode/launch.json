@@ -3,6 +3,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Finance",
+      "request": "launch",
+      "mainClass": "Account.Finance",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "addition.Main",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
+      "name": "NewMain",
+      "request": "launch",
+      "mainClass": "inheritance.NewMain",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "javaapplication4.Main",
+      "projectName": "c_programming_7788a850"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "javaapplication4.Main",
+      "projectName": "mavenproject1"
+    },
+    {
+      "type": "java",
       "name": "library",
       "request": "launch",
       "mainClass": "library",
