@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 struct node
 {
     int data;
     char n;
-    int isn;
+    bool isn;
     struct node *left;
     struct node *right;
 };
@@ -16,10 +17,11 @@ struct stack
 };
 
 struct stack *top = NULL;
-int check(char c)
+bool check(char c)
 {
     return (c == '+' || c == '-' || c == '*' || c == '/');
 }
+
 void push(struct node *a)
 {
     struct stack *b = malloc(sizeof(struct stack));
@@ -52,7 +54,7 @@ int evaluate(struct node *root)
     {
         int a = evaluate(root->left);
         int b = evaluate(root->right);
-        printf("Evaluating %c: a=%d, b=%d\n", root->n, a, b); // Debug output
+        
 
         switch (root->n)
         {
@@ -62,7 +64,7 @@ int evaluate(struct node *root)
             return a - b;
         case '*':
         {
-            
+
             return a * b;
         }
         case '/':
@@ -72,12 +74,8 @@ int evaluate(struct node *root)
             }
             else
             {
-                printf("Error: Division by zero\n");
-                exit(1); // Terminate the program with an error
+                return 0;
             }
-        default:
-            printf("Error: Invalid operator\n");
-            exit(1); // Terminate the program with an error
         }
     }
     else
@@ -92,16 +90,16 @@ struct node *insert(int c, char b)
     a->data = c;
     a->n = b;
     a->isn = check(a->n);
+    a->right = NULL;
+    a->left = NULL;
     if (a->isn)
     {
         a->right = pop();
         a->left = pop();
-        push(a);
     }
-    else
-    {
-        push(a);
-    }
+
+    push(a);
+
     return a;
 }
 
@@ -124,6 +122,26 @@ struct node *insert(int c, char b)
     printf("%d", evaluate(root));
     return 0;
 }*/
+void inorder(struct node *a)
+{
+    if (a == NULL)
+    {
+        return;
+    }
+    else
+    {
+        inorder(a->left);
+        if (!(a->isn))
+        {
+            printf("%d ", a->data);
+        }
+        else
+        {
+            printf("%c ", a->n);
+        }
+        inorder(a->right);
+    }
+}
 int main()
 {
     int n;
@@ -148,7 +166,7 @@ int main()
             root = insert(atoi(input), '#');
         }
     }
-
-    printf("Result: %d\n", evaluate(root));
+    inorder(root);
+    printf("\nResult: %d\n", evaluate(root));
     return 0;
 }
