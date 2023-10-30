@@ -168,6 +168,25 @@ bool deletedouble(struct node **a)
         }
     }
 }
+int search(int b, int i, struct node *a)
+{
+    if (a == NULL)
+    {
+        return -1;
+    }
+    else if (a->a == b)
+    {
+        return i;
+    }
+    else if (a->a > b)
+    {
+        return search(b, (2 * i) + 1, a->left);
+    }
+    else
+    {
+        return search(b, (2 * i) + 2, a->right);
+    }
+}
 int main(int argc, char **argv)
 {
 
@@ -181,7 +200,7 @@ int main(int argc, char **argv)
     do
     {
         int i;
-        printf("\nEnter Choice:\n1.Inserting a Element\n2.Deleting a node\n3.Display\nExit(0 OR 4)\n");
+        printf("\nEnter Choice:\n1.Inserting a Element\n2.Deleting a node\n3.Search an Element\n4.Display\n0.Exit\n");
         scanf("%d", &i);
         switch (i)
         {
@@ -193,6 +212,11 @@ int main(int argc, char **argv)
             break;
         case 2:
         {
+            if (root1 == NULL)
+            {
+                printf("Tree is Empty\n");
+                break;
+            }
             int a;
             printf("Enter 1.Deleting a node(value)\n2.Deleting singlechild node\n3.Deleting Double child node\n");
             scanf("%d", &a);
@@ -205,6 +229,7 @@ int main(int argc, char **argv)
                 root1 = delete (b, root1);
                 break;
             case 2:
+
                 if (deletesinglenode(&root1))
                 {
                     printf("Deleted\n");
@@ -232,13 +257,37 @@ int main(int argc, char **argv)
 
             break;
         }
-        case 3:
+        case 4:
+            if (root1 == NULL)
+            {
+                printf("Tree is Empty\n");
+                break;
+            }
             inorder(root1);
             break;
         case 0:
             return 0;
-        case 4:
-            return 0;
+        case 3:
+        {
+            if (root1 == NULL)
+            {
+                printf("Empty\n");
+                break;
+            }
+            int a;
+            printf("Enter the Element to be searched:");
+            scanf("%d", &a);
+            a = search(a, 0, root1);
+            if (a == -1)
+            {
+                printf("Not Found\n");
+            }
+            else
+            {
+                printf("Found at position %d\n", a);
+            }
+            break;
+        }
         default:
             printf("Invalid Choice\n");
             break;
