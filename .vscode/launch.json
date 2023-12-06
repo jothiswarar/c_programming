@@ -2,105 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "java",
-      "name": "Finance",
-      "request": "launch",
-      "mainClass": "Account.Finance",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "Main",
-      "request": "launch",
-      "mainClass": "addition.Main",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "NewMain",
-      "request": "launch",
-      "mainClass": "inheritance.NewMain",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "Main",
-      "request": "launch",
-      "mainClass": "javaapplication4.Main",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "Main",
-      "request": "launch",
-      "mainClass": "javaapplication4.Main",
-      "projectName": "mavenproject1"
-    },
-    {
-      "type": "java",
-      "name": "library",
-      "request": "launch",
-      "mainClass": "library",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "abstractc",
-      "request": "launch",
-      "mainClass": "abstractc",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "sorting",
-      "request": "launch",
-      "mainClass": "sorting",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "perfect",
-      "request": "launch",
-      "mainClass": "perfect",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "matrix",
-      "request": "launch",
-      "mainClass": "matrix",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "Test",
-      "request": "launch",
-      "mainClass": "Test",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "Test",
-      "request": "launch",
-      "mainClass": "oopsjava.Test",
-      "projectName": "c_programming_7788a850"
-    },
-    {
-      "type": "java",
-      "name": "denomination",
-      "request": "launch",
-      "mainClass": "denomination",
-      "projectName": "c_programming_7788a850"
-    },
-    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/python/c programming/c_programming/circular",
-      "program": "d:/python/c programming/c_programming/circular/build/Debug/outDebug",
+      "cwd": "d:/python/c programming/c_programming/adt",
+      "program": "d:/python/c programming/c_programming/adt/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
