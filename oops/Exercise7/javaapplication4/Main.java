@@ -1,4 +1,4 @@
-package Exercise7.javaapplication4;
+package javaapplication4;
 import java.util.*;
 public class Main {
 

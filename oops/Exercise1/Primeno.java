@@ -1,4 +1,4 @@
-package Exercise1;
+
 public class Primeno {
 
   public static void main(String[] args) {

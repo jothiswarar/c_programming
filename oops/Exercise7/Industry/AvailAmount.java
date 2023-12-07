@@ -1,4 +1,4 @@
-package Industry;
+package Exercise7.Industry;
 public class AvailAmount {
     private double assets;
     private double liabilities;

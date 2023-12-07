@@ -1,4 +1,4 @@
-package Exercise2;
+
 import java.util.*; 
 class hi{ 
 void digit(int n,int k) 

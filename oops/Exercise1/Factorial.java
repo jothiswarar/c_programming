@@ -1,4 +1,4 @@
-package Exercise1;
+
 import java.util.*;
 
 public class Factorial {

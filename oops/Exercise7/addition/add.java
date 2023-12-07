@@ -1,5 +1,5 @@
 
-package Exercise7.addition;
+package addition;
 
 public class add {
     protected int a,b;

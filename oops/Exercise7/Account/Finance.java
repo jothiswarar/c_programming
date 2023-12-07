@@ -1,6 +1,5 @@
-package Account;
-import Industry.Expenses;
-import Industry.AvailAmount;
+package Exercise7.Account;
+import Exercise7.Industry.*;
 
 public class Finance {
     public static void main(String[] args) {

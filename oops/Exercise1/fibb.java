@@ -1,4 +1,4 @@
-package Exercise1;
+
 public class fibb {
 
   public static void main(String[] args) {
