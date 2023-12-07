@@ -3,7 +3,7 @@ interface Stack{
     void push(int b);
     int pop();
 }
-public class StackTest implements Stack{
+class StackTest implements Stack{
     int n=10,i=-1;
     int[] arr = new int[n];
     private void newArray(){
