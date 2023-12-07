@@ -1,3 +1,4 @@
+package Exercise6;
 import java.util.*;
 abstract class Accounts{
     double balance;

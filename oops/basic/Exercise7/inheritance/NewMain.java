@@ -1,6 +1,7 @@
-package inheritance;
+package Exercise7.inheritance;
 import java.util.*;
-import addition.add;
+
+import Exercise7.addition.add;
 class calc extends add {
     calc(int a,int b){
         super(a,b);

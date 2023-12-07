@@ -1,3 +1,5 @@
+package Exercise5;
+
 import java.util.*;
 
 class array {
@@ -76,10 +78,10 @@ class array {
 
   void addition() {
     if (a.length == b.length && a[0].length == b[0].length) {
-        int [][] c= new int [a.length][a[0].length];
+      int[][] c = new int[a.length][a[0].length];
       for (int i = 0; i < a.length; i++) {
         for (int j = 0; j < a[0].length; j++) {
-          c[i][j]=a[i][j] + b[i][j];
+          c[i][j] = a[i][j] + b[i][j];
         }
       }
       System.out.println("Matrix Addition:");
@@ -96,10 +98,10 @@ class array {
 
   void subraction() {
     if (a.length == b.length && a[0].length == b[0].length) {
-        int [][] c= new int [a.length][a[0].length];
+      int[][] c = new int[a.length][a[0].length];
       for (int i = 0; i < a.length; i++) {
         for (int j = 0; j < a[0].length; j++) {
-          c[i][j]=a[i][j] - b[i][j];
+          c[i][j] = a[i][j] - b[i][j];
         }
       }
       System.out.println("Matrix Subraction:");
