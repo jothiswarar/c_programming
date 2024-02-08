@@ -1,3 +1,5 @@
+package Exercise5;
+
 
 class number{
     boolean isPerfect(int s){

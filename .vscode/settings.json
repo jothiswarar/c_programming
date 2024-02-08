@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
         "oops"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
