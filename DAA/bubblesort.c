@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <time.h>
+//#include "merge.c"
 unsigned long int arr[10000];
 int n;
 void readf(FILE *a){
@@ -34,10 +35,11 @@ int main()
 {
     clock_t b;
     b=clock();
-    FILE *a=fopen("random.txt","r");
+    FILE *a=fopen("sorted.txt","r");
     readf(a);
     clock_t t;
     t=clock();
+    //mergesort(0,10000,arr);
     bubble();
     t=clock()-t;
     printf("TIME TAKEN IS %f",(((double)t)/CLOCKS_PER_SEC));
