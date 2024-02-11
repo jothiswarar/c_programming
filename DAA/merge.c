@@ -32,9 +32,9 @@ void merge(int *m,int i,int mid,int j){
             m[n++]=a[k++];
         }
     }
-    //return m;
+  
 }
-//int a[100];
+
 void mergesort(int i,int j,int *a){
     if(i<j){
         int mid=(i+j)/2;
@@ -44,9 +44,18 @@ void mergesort(int i,int j,int *a){
     }
 }
 void main(){
-    int a[]={3,2,7,1,9,4};
-    mergesort(0,5,a);
-    for(int i=0;i<6;i++){
+    int n;
+    printf("Enter n;");
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter the elements:");
+    for(int i=0;i<n;i++){
+        scanf("%d",a+i);
+    }
+    
+    mergesort(0,n-1,a);
+    for(int i=0;i<n;i++){
         printf("%d\t",a[i]);
     }
+    
 }
