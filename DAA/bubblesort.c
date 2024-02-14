@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "quick.c"
 unsigned long int arr[10000];
 int n;
 void readf(FILE *a){
@@ -44,19 +45,30 @@ int checksorted(FILE *a){
     }
     return 1;
 }
+void printtime(){
+
+    clock_t t;
+    t=clock();
+    //quicksort(arr,0,n-1);
+    bubble();
+    t=clock()-t;
+    printf("TIME TAKEN IS %f\n",(((double)t)/CLOCKS_PER_SEC));
+}
 int main()
 {
     clock_t b;
     b=clock();
-    FILE *a=fopen("input.txt","r");
+    FILE *a=fopen("random.txt","r");
+    FILE *d=fopen("sorted.txt","r");
+    FILE *c=fopen("input.txt","r");
     readf(a);
-    clock_t t;
-    t=clock();
-    bubble();
-    t=clock()-t;
-    printf("TIME TAKEN IS %f",(((double)t)/CLOCKS_PER_SEC));
+    printtime();
+    readf(d);
+    printtime();
+    readf(c);
+    printtime();
     fclose(a);
-    a=fopen("out.txt","w+");
+    /*a=fopen("out.txt","w+");
     for(int i=0;i<n;i++){
         fprintf(a,"%ld\n",arr[i]);
     }
@@ -66,6 +78,6 @@ int main()
     else{
         printf("not sorted");
     }
-    fclose(a);
+    fclose(a);*/
 
 }
