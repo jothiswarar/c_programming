@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct PCB
+typedef struct PCB
 {
     int pid;
     int priority;
@@ -8,9 +8,10 @@ struct PCB
     int bursttime;
     struct PCB *next;
     struct PCB *prev;
-};
+}pcb;
 struct PCB *tail = NULL, *head = NULL;
 int wait = 0;
+float avg = 0.0;
 void add(struct PCB *a)
 {
     if (head == NULL)
@@ -26,49 +27,22 @@ void add(struct PCB *a)
     }
     a->next = NULL;
 }
-void swap(struct PCB *a, struct PCB *b)
-{
-    if (a == head)
-    {
-        head = b;
+pcb* priority(){
+    if(head==NULL){
+        return NULL;
     }
-    if (a->prev != NULL)
-    {
-        a->prev->next = b;
-    }
-    if (b->next != NULL)
-    {
-        b->next->prev = a;
-    }
-    struct PCB *t = b->next;
-    b->next = a->next;
-    a->next = t;
-    t = b->prev;
-    b->prev = a->prev;
-    a->prev = t;
-}
-void sort()
-{
-    struct PCB *c;
-    int i;
-    do
-    {
-        i = 0;
-        c = head;
-        while (c->next != NULL)
-        {
-            if (c->priority > c->next->priority)
-            {
-                swap(c, c->next);
-                i = 1;
-            }
-            c = c->next;
+    pcb *a=head,*b=head;
+    while(a!=NULL){
+        if(a->priority<b->priority){
+            b=a;
         }
-    } while (i);
+        a=a->next;
+    }
+    return b;
 }
 void run()
 {
-    struct PCB *a = head;
+    struct PCB *a = priority();
     while (a != NULL)
     {
         a->waitingtime = wait + a->bursttime;
@@ -76,8 +50,34 @@ void run()
         printf("\nPID:%d", a->pid);
         printf("\nCPU Burst Time:%d", a->bursttime);
         printf("\nWaiting Time:%d\n", a->waitingtime);
-        a = a->next;
+        avg+=(float)a->waitingtime;
+        
+        if(a==head && tail==a){
+            head=tail=NULL;
+            
+        }
+        else if(a==head){
+            a->next->prev=NULL;
+            head=a->next;
+           
+        }
+        else if(a==tail){
+            tail->prev->next=NULL;
+            tail=tail->prev;
+        }
+        else{
+            pcb *b,*c;
+            b=a->prev;
+            c=a->next;
+            b->next=c;
+            c->prev=b;
+            
+        }
+        free(a);
+        a = priority();
+        //printf("i");
     }
+    
 }
 void input(struct PCB *a)
 {
@@ -86,7 +86,7 @@ void input(struct PCB *a)
     printf("Enter the Priority:");
     scanf("%d", &a->priority);
 }
-void main()
+int main()
 {
     int n;
     printf("Enter no. of processes:");
@@ -100,15 +100,7 @@ void main()
         temp->waitingtime = 0;
         add(temp);
     }
-    sort();
     run();
-    temp = head;
-    float avg = 0.0;
-    while (temp != NULL)
-    {
-        avg += temp->waitingtime;
-        temp = temp->next;
-    }
-    avg=avg/n;
-    printf("Average Waiting Time:%d",avg);
+    avg=avg/(float)n;
+    printf("Average Waiting Time:%f",avg);
 }
