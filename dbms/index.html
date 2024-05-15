@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Movie Renting</title>
+</head>
+<body>
+    <section class="top-bar">
+        <div class="left-content">
+            <h2 class="title">M4You</h2>
+            <ul class="navigation">
+                <li><a class ="active" href="#">Home</a></li>
+                <li><a href="movie_details.html">Movies</a></li>
+                
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+        <div class="right-content">
+            <img src="./assets/images/filter.png" alt="" class="filter">
+            <img src="./assets/images/cart.png" alt="" class="cart">
+            <img src="./assets/images/help.png" alt="" class="help">
+            <div class="profile-img-box">
+                <img src="./assets/images/profile.jpg" alt="">
+            </div>
+            <img src="./assets/images/menu.png" alt="" class="menu">
+        </div>
+    </section>
+    <section class="main-container">
+        <div class="sidebar">
+            <form action="#">
+                <div class="sidebar-groups">
+                    <h3 class="sg-title">Categories</h3>
+                    <input type="checkbox" id="adventure" name="adventure" value="adventure">
+                    <label for="adventure">Adventure</label><br>
+                    <!-- Add more checkboxes for other categories -->
+                </div>
+                <!-- Add more sidebar groups as needed -->
+                <div class="sidebar-groups">
+                    <a href="#" class="btn-l btn">Apply Filters</a>
+                </div>
+            </form>
+        </div>
+        <div class="movies-container">
+            <div class="upcoming-img-box">
+                <img src="assets/images/upcoming.webp" alt="">
+                <p class="upcoming-title">Upcoming Movie</p>
+                <div class="buttons">
+                    <a href="#" class="btn">Book Now</a>
+                    <a href="#" class="btn-alt btn">Play Trailer</a>
+                </div>
+            </div>
+            <div class="current-movies">
+                <!-- Add more current movie listings here -->
+                <div class="current-movie">
+                    <div class="cm-img-box">
+                        <img src="assets/images/movie1.jpg" alt="">
+                    </div>
+                    <h3 class="movie-title">Jurassic World</h3>
+                    <p class="screen-name">Screen : Platinum</p>
+                    <div class="booking">
+                        <h2 class="price">15$</h2>
+                        <a href="#" class="btn">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

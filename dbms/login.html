@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
+  <title>Login</title>
+</head>
+<body>
+  <section class="login-container">
+    <h2>Login</h2>
+    <form action="#" onsubmit="redirectToIndex()">
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Login</button>
+      </div>
+      <a href="register.html">Don't have an account? Register Here</a>
+    </form>
+  </section>
+  
+  <script>
+    function redirectToIndex() {
+      // Perform login validation here
+      // If login is successful, redirect to index.html
+      window.location.href = "index.html";
+      return false; // Prevent form submission
+    }
+  </script>
+</body>
+</html>

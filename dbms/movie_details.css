@@ -1,0 +1,59 @@
+/* moviedetails.css */
+
+/* Add your styles for the movie details page here */
+.movie-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .movie-poster img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .movie-info {
+    margin-left: 30px;
+    color: #333;
+  }
+  
+  .movie-info h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .movie-info p {
+    margin-bottom: 10px;
+  }
+  
+  .cast-list,
+  .review-list {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  .cast-list li,
+  .review-list li {
+    list-style: disc;
+    margin-bottom: 5px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  

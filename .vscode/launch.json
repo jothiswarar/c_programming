@@ -78,8 +78,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/jo_programs/c_programming/DAA",
-      "program": "d:/jo_programs/c_programming/DAA/build/Debug/outDebug",
+      "cwd": "d:/jo_programs/c_programming/OS",
+      "program": "d:/jo_programs/c_programming/OS/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -1,0 +1,54 @@
+/* Login container styles */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #adadad;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #adadad;
+    border-radius: 5px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 15px;
+    background-color: #cd8c38;
+    border: none;
+    border-radius: 5px;
+    color: #1e1f26;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #92601f;
+}
+
+/* Register link styles */
+.login-container a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #cd8c38;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
